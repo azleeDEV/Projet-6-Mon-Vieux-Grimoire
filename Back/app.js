@@ -5,6 +5,12 @@ const userRoutes = require('./routes/user');
 const path = require('path');
 const password = require('./utils/password')
 
+mongoose.connect('mongodb+srv://AZdev:${password}@cluster0-pme76.mongodb.net/test?retryWrites=true&w=majority',
+    { useNewUrlParser: true,
+      useUnifiedTopology: true })
+    .then(() => console.log('Connexion à MongoDB réussie !'))
+    .catch(() => console.log('Connexion à MongoDB échouée !'));
+
 // Création de l'application
 const app = express();
 // Middleware permettant à Express d'extraire le corps JSON des requêtes POST
