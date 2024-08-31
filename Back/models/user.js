@@ -10,5 +10,4 @@ const userSchema = mongoose.Schema({
 
 userSchema.plugin(uniqueValidator);
 
-// On exporte le modèle comme modèle réutilisable
 module.exports = mongoose.model('User', userSchema);
