@@ -37,7 +37,7 @@ module.exports.resizeImage = (req, res, next) => {
   const outputFilePath = path.join('images', `resized_${fileName}`);
 
   sharp(filePath)
-    .toFormat('Webp')
+  
     .resize({ width: 206, height: 260 })
     .toFile(outputFilePath)
     .then(() => {
